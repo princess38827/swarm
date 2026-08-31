@@ -1,0 +1,13 @@
+name: Swarm CI - Free
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest # free runner
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - run: python -m py_compile swarm/*.py agents/*.py council/*.py
+      - run: echo "100-agent swarm lint OK - Glimmer local only, no cloud cost"
