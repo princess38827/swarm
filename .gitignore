@@ -1,7 +1,0 @@
-__pycache__/
-*.pyc
-.env
-models/
-*.gguf
-qdrant_storage/
-data/
